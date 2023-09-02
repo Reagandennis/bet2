@@ -7,6 +7,7 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  TextEditingController _nameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -14,6 +15,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     final response = await http.post(
       'YOUR_REGISTRATION_API_ENDPOINT' as Uri,
       body: {
+        'name' : _nameController,
         'email': _emailController.text,
         'password': _passwordController.text,
       },
@@ -28,12 +30,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       appBar: AppBar(title: Text('Registration')),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(controller: _emailController, decoration: InputDecoration(labelText: 'Email')),
-            TextField(controller: _passwordController, decoration: InputDecoration(labelText: 'Password')),
-            ElevatedButton(onPressed: _registerUser, child: Text('Register')),
-          ],
+        child: Center(
+          child: Column(
+            children: [
+              TextField(controller: _nameController, decoration: InputDecoration(labelText: 'Name')),
+              TextField(controller: _emailController, decoration: InputDecoration(labelText: 'Email')),
+              TextField(controller: _passwordController, decoration: InputDecoration(labelText: 'Password')),
+              ElevatedButton(onPressed: _registerUser, child: Text('Register')),
+            ],
+          ),
         ),
       ),
     );
