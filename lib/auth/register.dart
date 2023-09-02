@@ -29,7 +29,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Registration')),
+      appBar: AppBar(title: Center(child: Text('Registration')),
+      elevation: 0,
+      backgroundColor: Colors.black,),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
