@@ -11,6 +11,7 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
   Future<void> _registerUser() async {
@@ -61,6 +62,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   controller: _emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
+                     contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Add padding here
+                    border: InputBorder.none, // Remove TextField's default border
+                  ),),
+              ),
+               SizedBox(height: 16),
+            Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+            child: TextField(
+                  controller: _phoneController,
+                  decoration: InputDecoration(
+                    labelText: 'Phone number',
                      contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Add padding here
                     border: InputBorder.none, // Remove TextField's default border
                   ),),
