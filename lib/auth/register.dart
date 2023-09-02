@@ -46,6 +46,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   controller: _nameController,
                   decoration: InputDecoration(
                     labelText: 'Name',
+                     contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Add padding here
                     border: InputBorder.none, // Remove TextField's default border
                   ),
                 ),
@@ -60,6 +61,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   controller: _emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
+                     contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Add padding here
                     border: InputBorder.none, // Remove TextField's default border
                   ),),
               ),
@@ -73,6 +75,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   controller: _passwordController,
                   decoration: InputDecoration(
                     labelText: 'Password',
+                     contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Add padding here
                     border: InputBorder.none,
                   ),
                 ),
