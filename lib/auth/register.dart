@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -30,15 +32,52 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       appBar: AppBar(title: Text('Registration')),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Center(
-          child: Column(
-            children: [
-              TextField(controller: _nameController, decoration: InputDecoration(labelText: 'Name')),
-              TextField(controller: _emailController, decoration: InputDecoration(labelText: 'Email')),
-              TextField(controller: _passwordController, decoration: InputDecoration(labelText: 'Password')),
+        child: Column(
+           mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+          children: [
+            Container(
+               decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black), // Add border decoration
+                  borderRadius: BorderRadius.circular(8.0),
+            ),
+             child: TextField(
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                    labelText: 'Name',
+                    border: InputBorder.none, // Remove TextField's default border
+                  ),
+                ),
+            ),
+            SizedBox(height: 16),
+            Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+            child: TextField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    border: InputBorder.none, // Remove TextField's default border
+                  ),),
+              ),
+              SizedBox(height: 16),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: TextField(
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+              SizedBox(height: 16),
               ElevatedButton(onPressed: _registerUser, child: Text('Register')),
-            ],
-          ),
+          ],
         ),
       ),
     );
